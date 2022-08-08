@@ -1,5 +1,29 @@
 {
     "name": "3d-avatar",
     "version": "1.0.0",
-    "description": ""
+    "description": "",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jeth90/3D-avatar.git"
+    },
+    "keywords": [
+        "3d",
+        "avatar"
+    ],
+    "author": "jetter aquino",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jeth90/3D-avatar/issues"
+    },
+    "homepage": "https://github.com/jeth90/3D-avatar#readme",
+    "dependencies": {
+        "dotenv": "^16.0.1",
+        "install": "^0.13.0",
+        "node-fetch": "^2.6.7",
+        "npm": "^8.16.0"
+    }
 }
