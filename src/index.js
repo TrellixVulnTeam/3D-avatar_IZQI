@@ -1,6 +1,10 @@
 "use strict"
 const fetch = require("node-fetch")
 
+async function getUserData() {}
+
+async function getUserPublicKey() {}
+
 async function getPlayerData(userAddress) {
   if (userAddress === null) return
   let result = []
@@ -24,7 +28,26 @@ async function getPlayerData(userAddress) {
   return result
 }
 
-function getConnectedPlayers(params) {}
+async function getConnectedPlayers() {
+  let result = []
+  const response = await fetch(
+    `http://localhost:3000/api/sdk/connected-player`,
+    {
+      method: "GET",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  )
+    .then((response) => response.json())
+    .then((response) => result.push(response.response))
+
+  console.log(result)
+  return result
+}
 
 async function setPlayerPosition(params) {
   const body = params
@@ -65,7 +88,7 @@ async function getPlayerPosition(userAddress) {
     .then((response) => response.json())
     .then((response) => result.push(response.playerPosition))
 
-  console.log(result)
+  return response
 }
 
 module.exports = {
